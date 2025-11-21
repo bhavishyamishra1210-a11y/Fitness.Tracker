@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Uthana Fitness - Fitness Tracker</title>
+  <style>
+    :root{--accent:#0ea5a4;--dark:#0f172a;--muted:#64748b;--card:#ffffffcc}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;background:linear-gradient(180deg,#f8fafc,#e6eef3);color:#0b1a2b}
+    header{background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;padding:12px 18px;position:sticky;top:0;z-index:50}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{font-weight:800;letter-spacing:0.6px}
+    nav a{color:white;text-decoration:none;margin:0 8px;font-weight:600}
+    .hero{display:flex;gap:24px;align-items:center;padding:28px 0}
+    .hero .left{flex:1}
+    .hero h1{font-size:2rem;margin:0 0 8px}
+    .btn{background:var(--dark);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;display:inline-block}
+    section{padding:28px 0}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    footer{padding:18px 0;color:var(--muted)}
+    .services ul{list-style:none;padding:0;margin:0}
+    .services li{padding:10px 0;border-bottom:1px dashed #e3eef3}
+    .levels{display:flex;gap:12px;flex-wrap:wrap}
+    .level{flex:1;min-width:180px;padding:14px;border-radius:10px;background:white}
+    .tracker-form{display:flex;gap:12px;flex-wrap:wrap}
+    .tracker-form input, .tracker-form select{padding:10px;border-radius:8px;border:1px solid #d2e6ea}
+    .tracker-log{margin-top:14px}
+    #chart{width:100%;height:160px;background:linear-gradient(180deg,#fff,#f6fbfd);border-radius:10px;padding:12px}
+    .login-wrap{max-width:420px;margin:0 auto}
+    input[type=text],input[type=password],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #d6e6ea}
+    .dash-hero{display:flex;gap:16px;align-items:center}
+    .dash-hero img{max-width:420px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.08)}
+    .img-gallery{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .img-gallery img{width:calc(33% - 8px);min-width:120px;border-radius:10px;object-fit:cover;box-shadow:0 6px 14px rgba(2,6,23,0.06)}
+    @media (max-width:900px){ .hero{flex-direction:column;text-align:center}.dash-hero{flex-direction:column} .img-gallery img{width:48%} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Uthana Fitness</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#classes">Classes</a>
+        <a href="#tracker">Fitness Tracker</a>
+        <a href="#blog">Blog</a>
+        <a href="#login">Login</a>
+        <a href="#dashboard" class="btn">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="container hero">
+      <div class="left">
+        <h1>Welcome to Uthana Fitness</h1>
+        <p>Transform yourself with guided training, yoga, gymnastics &amp; karate. Track your progress, join classes (Beginner / Intermediate / Advanced), and get personalised dashboards to stay motivated.</p>
+        <p><a href="#classes" class="btn">See Classes</a> <a href="#tracker" style="margin-left:8px" class="btn">Open Tracker</a></p>
+      </div>
+
+      <!-- HERO IMAGE (AI-generated) -->
+      <div>
+        <!-- Use the local path you have. If you place images in public/images, change src accordingly. -->
+        <img src="/mnt/data/A_screenshot_of_a_fitness_tracker_website_homepage.png" alt="Fitness hero" style="max-width:420px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.08)">
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <div class="card">
+        <h2>About Uthana Fitness</h2>
+        <p>Uthana Fitness is a community-focused fitness center dedicated to holistic health. We combine modern exercise science with traditional practices to help members reach their goals — whether weight loss, strength, flexibility, or mental wellness.</p>
+      </div>
+    </section>
+
+    <section id="services" class="container services">
+      <div class="card">
+        <h2>Services We Provide</h2>
+        <ul>
+          <li><strong>Fitness Training:</strong> Personalized workout plans, strength &amp; conditioning, cardiovascular training and progress tracking.</li>
+          <li><strong>Yoga:</strong> Hatha and Vinyasa sessions for flexibility, breathing, stress relief and body awareness.</li>
+          <li><strong>Gymnastics:</strong> Foundations of body control, balance, flexibility and fun movement sessions for all ages.</li>
+          <li><strong>Karate:</strong> Self-defence classes that build discipline, confidence, and coordination. Beginner to advanced belts available.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="classes" class="container">
+      <div class="card">
+        <h2>Classes</h2>
+        <div class="levels">
+          <div class="level"><h3>Beginner</h3><p>Focus on technique & mobility. 3 sessions/week.</p></div>
+          <div class="level"><h3>Intermediate</h3><p>Intensity + skill development.</p></div>
+          <div class="level"><h3>Advanced</h3><p>Performance-focused training.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tracker" class="container">
+      <div class="card">
+        <h2>Fitness Tracker</h2>
+        <p>Data can be saved to server (backend) or locally. Fill and save an entry below.</p>
+        <form id="trackerForm" class="tracker-form">
+          <input type="date" id="tDate" required />
+          <input type="number" id="steps" placeholder="Steps" min="0" />
+          <input type="number" id="calories" placeholder="Calories burned" min="0" />
+          <input type="number" id="minutes" placeholder="Workout minutes" min="0" />
+          <select id="level">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+          <button type="submit" class="btn">Save</button>
+        </form>
+
+        <div class="tracker-log card" id="logArea" style="margin-top:12px">
+          <h3>Recent Entries</h3>
+          <div id="entries"></div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Quick Dashboard</h3>
+          <div id="chart"></div>
+          <p id="summary"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="container">
+      <div class="card" id="dashboardCard">
+        <h2>Dashboard</h2>
+        <p id="welcomeMsg">Please login to view personalised dashboard. (Use the Login page)</p>
+
+        <div id="dashContent" style="display:none">
+          <div class="dash-hero">
+            <div>
+              <h3>Welcome, <span id="dashName"></span></h3>
+              <p>Track progress, view stats, and browse exercise images.</p>
+              <div class="img-gallery">
+                <!-- AI-generated images showing ABS / Biceps / Back.
+                     If you prefer to put them in project/public/images/, update src accordingly. -->
+                <img src="/mnt/data/A_2D_digital_screenshot_showcases_a_fitness_tracke.png" alt="Abs/Biceps/Back 1">
+                <img src="/mnt/data/A_screenshot_of_a_fitness_tracker_website_homepage.png" alt="Abs/Biceps/Back 2">
+                <!-- If you have a third AI image, add it here or duplicate the second. -->
+                <img src="/mnt/data/A_2D_digital_screenshot_showcases_a_fitness_tracke.png" alt="Abs/Biceps/Back 3">
+              </div>
+            </div>
+
+            <!-- small summary boxes -->
+            <div style="flex:1">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div class="card"><h4>Steps (7d)</h4><p id="sSteps">-</p></div>
+                <div class="card"><h4>Calories (7d)</h4><p id="sCals">-</p></div>
+                <div class="card"><h4>Minutes (7d)</h4><p id="sMins">-</p></div>
+                <div class="card"><h4>Level</h4><p id="sLevel">-</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h3>Activity History</h3>
+            <div id="history"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="container">
+      <div class="card">
+        <h2>Blog</h2>
+        <article><h3>How to start a fitness habit</h3><p>Small wins win.</p></article>
+      </div>
+    </section>
+
+    <section id="login" class="container">
+      <div class="card login-wrap">
+        <h2>Login / Register</h2>
+        <form id="loginForm">
+          <label>Username</label><input type="text" id="username" required placeholder="your name" />
+          <label>Password</label><input type="password" id="password" required placeholder="any password" />
+          <p style="color:var(--muted);font-size:13px">This demo uses backend endpoints. Use Register first if new.</p>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button type="button" id="btnRegister" class="btn">Register</button>
+            <button type="submit" class="btn">Login</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="grid">
+        <div class="card"><h4>Contact</h4><p>Phone: 6299601727</p><p>Address: Your Address Here</p></div>
+        <div class="card"><h4>Hours</h4><p>Mon - Sat: 6:00 AM - 10:00 PM</p><p>Sunday: Off</p></div>
+        <div class="card"><h4>Quick Links</h4><p><a href="#classes">Classes</a> • <a href="#services">Services</a> • <a href="#tracker">Tracker</a></p></div>
+      </div>
+      <p style="text-align:center;margin-top:18px;color:var(--muted)">© Uthana Fitness</p>
+    </div>
+  </footer>
+
+  <script>
+    const API_BASE = 'http://localhost:5000'; // backend address (change if needed)
+
+    // ---------- Helpers for backend ----------
+    async function apiPost(path, body){
+      try{
+        const res = await fetch(API_BASE + path, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(body)
+        });
+        return await res.json();
+      }catch(e){
+        console.error('API error', e); return { error:e.message };
+      }
+    }
+    async function apiGet(path){
+      try{ const res = await fetch(API_BASE + path); return await res.json(); }
+      catch(e){ console.error('API error', e); return []; }
+    }
+
+    // ---------- Tracker storage (falls back to localStorage) ----------
+    function localLoadEntries(){ return JSON.parse(localStorage.getItem('uthana_entries') || '[]'); }
+    function localSaveEntries(list){ localStorage.setItem('uthana_entries', JSON.stringify(list)); }
+
+    async function serverSaveEntry(entry){
+      // if not logged in to server, just save locally
+      const user = JSON.parse(localStorage.getItem('uthana_user')||'null');
+      if(!user || !user.username){
+        const entries = localLoadEntries(); entries.push(entry); localSaveEntries(entries); return;
+      }
+      // send to server
+      await apiPost('/tracker', { username:user.username, ...entry });
+    }
+
+    async function serverLoadEntries(){
+      const user = JSON.parse(localStorage.getItem('uthana_user')||'null');
+      if(!user || !user.username) return localLoadEntries();
+      return await apiGet(`/tracker/${user.username}`);
+    }
+
+    // ---------- Render + UI ----------
+    function renderEntriesList(entries){
+      const el = document.getElementById('entries');
+      if(!entries.length){ el.innerHTML = '<p style="color:var(--muted)">No entries yet.</p>'; return; }
+      entries.slice().reverse();
+      el.innerHTML = entries.slice().reverse().map(e=>`<div style="padding:8px;border-bottom:1px solid #eef;color:#082" >
+        <strong>${e.date}</strong> — Steps: ${e.steps||0}, Calories: ${e.calories||0}, Minutes: ${e.minutes||0} <span style="float:right">${e.level||''}</span>
+      </div>`).join('');
+    }
+
+    async function renderSummaryAndHistory(){
+      const entries = await serverLoadEntries();
+      // summary (last 7 days)
+      if(!entries || !entries.length){
+        document.getElementById('summary').textContent = 'No data to show.'; document.getElementById('chart').innerHTML=''; return;
+      }
+      renderEntriesList(entries);
+      // simple aggregates for dashboard boxes
+      const last7 = entries.slice(-7);
+      const steps = last7.reduce((a,b)=>a+Number(b.steps||0),0);
+      const cals  = last7.reduce((a,b)=>a+Number(b.calories||0),0);
+      const mins  = last7.reduce((a,b)=>a+Number(b.minutes||0),0);
+      document.getElementById('sSteps').textContent = steps;
+      document.getElementById('sCals').textContent = cals;
+      document.getElementById('sMins').textContent = mins;
+      document.getElementById('sLevel').textContent = last7.length? last7[last7.length-1].level || '-' : '-';
+
+      // history table
+      const hist = document.getElementById('history');
+      hist.innerHTML = '<table style="width:100%;border-collapse:collapse"><thead><tr style="text-align:left"><th>Date</th><th>Steps</th><th>Calories</th><th>Minutes</th><th>Level</th></tr></thead><tbody>' +
+        entries.map(e=>`<tr><td>${e.date}</td><td>${e.steps||0}</td><td>${e.calories||0}</td><td>${e.minutes||0}</td><td>${e.level||''}</td></tr>`).join('') + '</tbody></table>';
+    }
+
+    document.getElementById('trackerForm').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const date = document.getElementById('tDate').value;
+      if(!date){ alert('Please select a date'); return; }
+      const steps = document.getElementById('steps').value||0;
+      const calories = document.getElementById('calories').value||0;
+      const minutes = document.getElementById('minutes').value||0;
+      const level = document.getElementById('level').value;
+      const entry = { date, steps:Number(steps), calories:Number(calories), minutes:Number(minutes), level };
+      // Save to server or local
+      await serverSaveEntry(entry);
+      await renderSummaryAndHistory();
+      this.reset();
+    });
+
+    document.getElementById('btnRegister').addEventListener('click', async ()=>{
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      if(!username||!password) return alert('Enter username & password');
+      const res = await apiPost('/register', { username, password });
+      if(res && res.message){ alert(res.message); }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      if(!username||!password) return alert('Enter username & password');
+      const res = await apiPost('/login', { username, password });
+      if(res && res.user){
+        // store user locally
+        localStorage.setItem('uthana_user', JSON.stringify({ username:res.user.username }));
+        showDashboard();
+        alert('Login successful!');
+        location.hash = '#dashboard';
+      } else {
+        alert(res.message || 'Login failed');
+      }
+    });
+
+    function showDashboard(){
+      const raw = localStorage.getItem('uthana_user');
+      const dashContent = document.getElementById('dashContent');
+      const welcome = document.getElementById('welcomeMsg');
+      if(!raw){ welcome.textContent = 'Please login to view personalised dashboard. (Use the Login page)'; dashContent.style.display='none'; return; }
+      const user = JSON.parse(raw);
+      document.getElementById('dashName').textContent = user.username;
+      welcome.style.display='none'; dashContent.style.display='block';
+      renderSummaryAndHistory();
+    }
+
+    // initial render
+    (async ()=>{
+      const localEntries = localLoadEntries();
+      renderEntriesList(localEntries);
+      renderSummaryAndHistory();
+      showDashboard();
+    })();
+
+    // smooth scroll anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
